@@ -10,8 +10,9 @@ import { skillsStore } from '../stores/skills/skillStore'
 const store = skillsStore()
 const addModal = ref(false)
 const deleteModal = ref(false)
-const updateId = ref(null)
 const deleteId = ref(null)
+const updateModal = ref(false)
+const updateId = ref(null)
 
 const updateContent = reactive({
   title: '',
@@ -24,6 +25,7 @@ const newSkill = reactive({
 })
 
 const toggleModal = () => (addModal.value = !addModal.value)
+const toggleUpdate = () => (updateModal.value = !updateModal.value)
 const toggleDelete = () => (deleteModal.value = !deleteModal.value)
 
 const addSkill = async () => {
@@ -42,7 +44,7 @@ const updateSkill = async () => {
     await store.UPDATE_SKILLS(updateId.value, updateContent)
     for (let i in updateContent) updateContent[i] = ''
     updateId.value = null
-    toggleModal() 
+    toggleUpdate() 
     toast.success('The skill updated', { autoClose: 2000, theme: 'dark' })
   } catch (error) {
     console.log(error)
