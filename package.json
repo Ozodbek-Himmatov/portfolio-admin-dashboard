@@ -10,10 +10,20 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@canvasjs/charts": "^3.7.11",
+    "@canvasjs/vue-charts": "^1.0.1",
+    "@tinymce/tinymce-vue": "^4.0.7",
+    "@upload-io/vue-uploader": "^3.33.0",
+    "axios": "^1.4.0",
+    "moment": "^2.29.4",
+    "naive-ui": "^2.34.4",
     "pinia": "^2.1.3",
     "sass": "^1.63.4",
+    "tw-elements": "^1.0.0-beta2",
+    "upload-js-full": "^2.15.0",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.2",
+    "vue3-toastify": "^0.1.11"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

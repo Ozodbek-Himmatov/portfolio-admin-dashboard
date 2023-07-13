@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Dashboard from '../views/Dashboard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,13 +6,49 @@ const router = createRouter({
     {
       path: '/',
       name: 'dashboard',
-      component: Dashboard,
+      component: () => import('../views/Dashboard.vue'),
       children: [
-        // {
-        //   path: '/employee',
-        //   name: 'employee',
-        //   component: () => import('../views/Employee/Employees.vue')
-        // },
+        {
+          path: '/',
+          name: 'home',
+          component: () => import('../views/Home.vue')
+        },
+        {
+          path: '/about',
+          name: 'about',
+          component: () => import('../views/About.vue')
+        },
+        {
+          path: '/skills',
+          name: 'skills',
+          component: () => import('../views/Skills.vue')
+        },
+        {
+          path: '/projects',
+          name: 'projects',
+          component: () => import('../views/Projects.vue')
+        },
+        {
+          path: '/experience',
+          name: 'experience',
+          component: () => import('../views/Experience.vue')
+        },
+        {
+          path: '/socials',
+          name: 'socials',
+          component: () => import('../views/Socials.vue')
+        },
+
+        {
+          path: '/blog',
+          name: 'blog',
+          component: () => import('../views/Blog.vue')
+        },
+        {
+          path: '/add-post',
+          name: 'Editor',
+          component: () => import('../views/AddPost.vue')
+        }
       ]
     },
     {
@@ -21,11 +56,11 @@ const router = createRouter({
       name: 'login',
       component: () => import('../views/Login.vue')
     },
-    // {
-    //   path: '/:pathMatch(.*)*',
-    //   name: 'error',
-    //   component: () => import('../views/Error.vue')
-    // }
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'error',
+      component: () => import('../views/Error.vue')
+    }
   ]
 })
 
