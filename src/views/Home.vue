@@ -7,15 +7,11 @@ const store = postsStore()
 onMounted(() => {
   store.GET_POST()
 })
-</script> 
+</script>
 
 <template>
   <section>
-    <div
-      class="grid grid-cols-3 gap-5 mb-5"
-      data-aos="fade-down"
-      data-aos-delay="500"
-    >
+    <div class="grid grid-cols-3 gap-5 mb-5" data-aos="fade-down" data-aos-delay="500">
       <div
         class="flex items-center justify-between p-5 h-auto w-full rounded-lg bg-transparent text-white border border-white shadow-xl"
       >
@@ -42,8 +38,8 @@ onMounted(() => {
           <i class="bx bxs-pie-chart-alt-2 text-3xl" style="color: #ffffff"></i>
         </div>
       </div>
-      <a 
-        href="/blog"
+      <router-link
+        to="/blog"
         class="flex items-center justify-between p-5 h-auto w-full rounded-lg bg-transparent text-white border border-white shadow-xl"
       >
         <div class="grid grid-cols-1 gap-1">
@@ -53,9 +49,8 @@ onMounted(() => {
         <div
           class="w-20 h-20 rounded-full shadow-inner shadow-white flex items-center justify-center"
         >
-          <i class="bx bx-spreadsheet text-3xl"></i>
-        </div>
-      </a>
+          <i class="bx bx-spreadsheet text-3xl"></i></div
+      ></router-link>
     </div>
     <Chart />
   </section>
