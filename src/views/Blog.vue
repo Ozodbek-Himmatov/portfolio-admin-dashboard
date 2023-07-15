@@ -143,7 +143,7 @@ onMounted(async () => {
               }
             "
           ></i>
-          <h2 class="w-full text-white text-xl text-center">
+          <h2 class="w-full overflow-x-auto px-3 text-white text-xl text-center">
             {{ el?.title }}
           </h2>
           <i
